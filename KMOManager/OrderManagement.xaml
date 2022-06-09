@@ -1,0 +1,63 @@
+﻿<Page x:Class="KMOManager.OrderManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KMOManager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderManagement">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+
+                <!--Knoppen-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+
+                <!--Create-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
+
+                <!--From-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+
+                <!--Until-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5"/>
+
+                <!--Document-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5"/>
+
+                <!--Rest-->
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btnEmptyProduct" Content="Empty" Grid.Column="0" Grid.Row="1" Click="btnEmptyProduct_Click"/>
+            <Button x:Name="btnEditProduct" Content="Edit" Grid.Column="1" Grid.Row="1"/>
+            <Button x:Name="btnRemoveProduct" Content="Remove" Grid.Column="2" Grid.Row="1" Click="btnRemoveProduct_Click"/>
+
+            <Button x:Name="btnCreateOrder" Content="Create" Grid.Column="1" Grid.Row="3" Click="btnCreateOrder_Click"/>
+            <DataGrid x:Name="DataShoppingCart" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" SelectionMode="Single" IsReadOnly="True"/>
+
+            <DataGrid x:Name="DataOrders" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="7" SelectionMode="Single" IsReadOnly="True" SelectionChanged="DataOrders_SelectionChanged"/>
+            <DataGrid x:Name="DataOrderDetails" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="7" SelectionMode="Single" IsReadOnly="True"/>
+            <Button x:Name="btnInvoice" Content="Invoice" Grid.Column="1" Grid.Row="9" Click="btnInvoice_Click"/>
+
+        </Grid>
+
+    </Grid>
+</Page>

@@ -1,0 +1,85 @@
+﻿<Page x:Class="KMOManager.ProductSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KMOManager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductSelection">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+
+                <!--Brand-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+
+                <!--Name-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+
+                <!--Size-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+
+                <!--Colour-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5"/>
+
+                <!--Audience-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5"/>
+
+                <!--Category-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5"/>
+
+                <!--Stock-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5"/>
+
+                <!--Rest-->
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="1" Content="Brand"/>
+            <ComboBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" x:Name="cboBrand" IsEnabled="False" SelectionChanged="cboBrand_SelectionChanged"/>
+
+            <Label Grid.Column="0" Grid.Row="3" Content="Name"/>
+            <ComboBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" x:Name="cboName" IsEnabled="False" SelectionChanged="cboName_SelectionChanged"/>
+
+            <Label Grid.Column="0" Grid.Row="5" Content="Size"/>
+            <ComboBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" x:Name="cboSize" IsEnabled="False" SelectionChanged="cboSize_SelectionChanged"/>
+
+            <Label Grid.Column="0" Grid.Row="7" Content="Colour"/>
+            <ComboBox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" x:Name="cboColour" IsEnabled="False" SelectionChanged="cboColour_SelectionChanged"/>
+
+            <Label Grid.Column="0" Grid.Row="9" Content="Audience"/>
+            <ComboBox Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" x:Name="cboAudience" IsEnabled="False" SelectionChanged="cboAudience_SelectionChanged"/>
+
+            <Label Grid.Column="0" Grid.Row="11" Content="Category"/>
+            <ComboBox Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2" x:Name="cboCategory" IsEnabled="False" SelectionChanged="cboCategory_SelectionChanged"/>
+
+            <Label Grid.Column="0" Grid.Row="13" Content="Stock"/>
+            <CheckBox Grid.Column="1" Grid.Row="13" x:Name="chkStock" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="False" Checked="chkStock_Checked"/>
+            <Button x:Name="btnAdd" Content="Add" Grid.Column="2" Grid.Row="13" Click="btnAdd_Click"/>
+
+            <DataGrid x:Name="DataAvailableProducts" Grid.Column="5" Grid.Row="1" Grid.RowSpan="13" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True"/>
+
+            <DataGrid x:Name="DataShoppingCart" Grid.Column="5" Grid.Row="15" Grid.RowSpan="1" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True"/>
+
+        </Grid>
+
+    </Grid>
+</Page>
